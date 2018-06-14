@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=
-DEPS = -I. 
+DEPS = -I. -I\$SYSTEMC_HOME/include -L. -L\$SYSTEMC_HOME/lib-linux64
 
 all: main
 
@@ -11,7 +11,7 @@ main.o: main.cpp
 	$(CC) -c main.cpp
 
 sysc: 
-	$(CC) -I. -I$SYSTEMC_HOME/include -L. -L$SYSTEMC_HOME/lib-linux64 -Wl,-rpath=$SYSTEMC_HOME/lib-linux64 -o hello main.cpp -lsystemc -lm
+	$(CC) $(DEPS) -Wl,-rpath=\$SYSTEMC_HOME/lib-linux64 -o hello main.cpp -lsystemc -lm
 
 
 clean:
