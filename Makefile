@@ -8,9 +8,6 @@ CXXFLAGS = -c -Wall -I.
 OUT = output
 DEPS = -I. -I${SYSTEMC_HOME}/include -L. -L${SYSTEMC_HOME}/lib-linux64 -Wl,-rpath=${SYSTEMC_HOME}/lib-linux64
 
-test:
-	echo $(ARCH)
-
 all: main
 	./$(OUT)
 
@@ -20,7 +17,7 @@ clean:
 	rm *.o $(OUT)
 
 main: main.o
-	$(CXX) -c main.o -o $(OUT)
+	$(CXX) -o $(OUT) main.o
 
-main.o: 
+main.o: main.cpp
 	$(CXX) $(DEPS) -o main.o main.cpp -lsystemc -lm
