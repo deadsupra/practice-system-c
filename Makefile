@@ -31,7 +31,6 @@ else
 		CCFLAGS += -D ARM
 	endif
 endif
-echo $(CCFLAGS)
 
 # Determine architecture
 ARCH := $(shell getconf LONG_BIT)
@@ -71,3 +70,6 @@ clean:
 
 main: main.cpp
 	$(CXX) $(DEPS) -o $(OUT) main.cpp -lsystemc -lm
+
+test:
+	echo $(CCFLAGS)
