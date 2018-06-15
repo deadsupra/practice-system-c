@@ -19,7 +19,7 @@ endif
 ifeq (${SYSTEMC_HOME},)
 	echo "SYSTEMC_HOME environment variable not set"
 else
-	echo "SYSTEMC_HOME is ${SYSTEMC_HOME}"
+	echo "SYSTEMC_HOME is set"
 endif
 
 # systemC standard dependencies
