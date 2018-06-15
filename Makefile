@@ -33,6 +33,8 @@ else
 	endif
 endif
 
+echo $(CCFLAGS)
+
 # Determine architecture
 ARCH := $(shell getconf LONG_BIT)
 
