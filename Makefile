@@ -6,7 +6,12 @@ CFLAGS = -I.
 CXXFLAGS = -c -Wall -I.
 
 OUT = output
-DEPS = -I. -I${SYSTEMC_HOME}/include -L. -L${SYSTEMC_HOME}/lib-linux64 -Wl,-rpath=${SYSTEMC_HOME}/lib-linux64
+ifeq ($(ARCH),64)
+	LIB_LINUX = lib-linux64
+else
+	LIB_LINUX = lib-linux
+endif
+DEPS = -I. -I${SYSTEMC_HOME}/include -L. -L${SYSTEMC_HOME}/$(LIB_LINUX) -Wl,-rpath=${SYSTEMC_HOME}/$(LIB_LINUX)
 
 all: main
 	./$(OUT)
@@ -16,8 +21,5 @@ install:
 clean:
 	rm *.o $(OUT)
 
-main: main.o
-	$(CXX) -o $(OUT) main.o
-
-main.o: main.cpp
-	$(CXX) $(DEPS) -o main.o main.cpp -lsystemc -lm
+main: main.cpp
+	$(CXX) $(DEPS) -o $(OUT) main.cpp -lsystemc -lm
