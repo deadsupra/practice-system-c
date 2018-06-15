@@ -54,8 +54,13 @@ ifeq (${SYSTEMC_HOME},)
 	echo $(TEMP_MESSAGE)
 endif
 
-# program output name
-OUT = output
+# Set the output name
+OUT_PREFIX = output
+ifeq ($(OS),Windows_NT)
+	OUT = $(OUT_PREFIX).exe
+else
+	OUT = $(OUT_PREFIX)
+endif
 
 # systemC standard dependencies
 DEPS = -I. -I${SYSTEMC_HOME}/include -L. -L${SYSTEMC_HOME}/$(LIB_LINUX) -Wl,-rpath=${SYSTEMC_HOME}/$(LIB_LINUX)
