@@ -18,6 +18,8 @@ endif
 # Ensure SYSTEMC_HOME is defined for environment variables
 ifeq (${SYSTEMC_HOME},)
 	echo "SYSTEMC_HOME environment variable not set"
+else
+	echo "SYSTEMC_HOME is ${SYSTEMC_HOME}"
 endif
 
 # systemC standard dependencies
