@@ -19,9 +19,6 @@ endif
 ifeq (${SYSTEMC_HOME},)
 	TEMP_MESSAGE = SYSTEMC_HOME environment variable not set
 	echo $(TEMP_MESSAGE)
-else
-	TEMP_MESSAGE = SYSTEMC_HOME is set
-	echo $(TEMP_MESSAGE)
 endif
 
 # systemC standard dependencies
