@@ -16,10 +16,12 @@ else
 endif
 
 # Ensure SYSTEMC_HOME is defined for environment variables
-ifeq (${SYSTEMC_HOME},)
-	echo "SYSTEMC_HOME environment variable not set"
+ifeq (${SYSTEMC_HOME},"")
+	TEMP_MESSAGE = SYSTEMC_HOME environment variable not set
+	echo $(TEMP_MESSAGE)
 else
-	echo "SYSTEMC_HOME is set"
+	TEMP_MESSAGE = SYSTEMC_HOME is set
+	echo $(TEMP_MESSAGE)
 endif
 
 # systemC standard dependencies
