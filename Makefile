@@ -20,7 +20,7 @@ clean:
 	rm *.o $(OUT)
 
 main: main.o
-	$(CXX) -c main.o
+	$(CXX) -c main.o -o $(OUT)
 
 main.o: 
-	$(CXX) $(DEPS) -o $(OUT) main.cpp -lsystemc -lm
+	$(CXX) $(DEPS) -o main.o main.cpp -lsystemc -lm
