@@ -31,7 +31,6 @@ else
 		CCFLAGS += -D ARM
 	endif
 endif
-
 echo $(CCFLAGS)
 
 # Determine architecture
