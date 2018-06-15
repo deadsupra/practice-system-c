@@ -16,7 +16,7 @@ else
 endif
 
 # Ensure SYSTEMC_HOME is defined for environment variables
-ifeq (${SYSTEMC_HOME},"")
+ifeq (${SYSTEMC_HOME},)
 	TEMP_MESSAGE = SYSTEMC_HOME environment variable not set
 	echo $(TEMP_MESSAGE)
 else
