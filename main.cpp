@@ -93,7 +93,7 @@ int sc_main(int argc, char* argv[]) {
 	cout << "Set load high at " << sc_time_stamp() << "\n";
 	sc_start(2000, SC_NS);
 
-	cout << "Finished at " << sc_start_stamp() << "\n";
+	cout << "Finished at " << sc_time_stamp() << "\n";
 
 	return 0;
 }
