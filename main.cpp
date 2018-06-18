@@ -59,7 +59,7 @@ int sc_main(int argc, char* argv[]) {
 
 	printf("fixed-field arithmetic/counter example:\n");
 
-	sc_tace_file *tf = sc_create_vcd_trace_file("trace");
+	sc_trace_file *tf = sc_create_vcd_trace_file("trace");
 	tf->set_time_unit(1, SC_NS);
 
 	sc_signal <bool> clk, load, reset;
