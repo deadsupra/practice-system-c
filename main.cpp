@@ -1,3 +1,8 @@
+/**
+ * 
+ */
+
+#include <stdio.h>
 #include <systemc.h>
 
 using namespace std;
@@ -12,9 +17,9 @@ SC_MODULE (hello_world) {
 };
 
 SC_MODULE (fivebitcounter) {
-	sc_in clk, reset, load;
-	sc_out > q;
-	sc_out > parallelin;
+	sc_in <bool> clk, reset, load;
+	sc_out <sc_uint<5> > q;
+	sc_out <sc_uint<5> > parallelin;
 
 	SC_CTOR(fivebitcounter) {
 		void clkme();
