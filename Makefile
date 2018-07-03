@@ -78,3 +78,6 @@ main: main.cpp
 
 test:
 	echo $(CCFLAGS)
+
+maincc: main.cc
+	$(DEPS) -o $(OUT) -lsystemc -lm

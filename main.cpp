@@ -1,5 +1,7 @@
 /**
- * 
+ * main.cpp
+ * Testing systemC code
+ *
  */
 
 #include <stdio.h>
